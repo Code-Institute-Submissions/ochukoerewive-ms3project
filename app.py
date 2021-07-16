@@ -2,6 +2,7 @@ import os
 from flask import Flask, flash, render_template, url_for, redirect, request, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 if os.path.exists("env.py"):
     import env
 
@@ -28,9 +29,22 @@ def index():
 def login():
     return ""
 
-@app.route("/register")
+@app.route("/register", methods=["POST", "GET"])
 def register():
-    return ""
+    if request.method == "POST":
+        users = mongo.db.users
+        existing_user = users.find_one({"name" : request.form["username"]})
+
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form["pass"].encode("utf-8"), bcrypt.gensalt())
+            users.insert({"name" : request.form["username"], "password" : hashpass })
+            session["username"] = request.form["username"]
+            return redirect(url_for("index"))
+
+        return "That username already exists"
+    
+    return render_template("register.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

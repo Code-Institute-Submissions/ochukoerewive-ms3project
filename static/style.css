@@ -13,9 +13,9 @@ body{
 }
 
 .container{
-    width: 350px;
+    width: 340px;
     height: 520px;
-    background:rgb(218, 216, 216);
+    background:rgb(238, 236, 236);
     color:rgb(27, 1, 27);
     top: 50%;
     left: 50%;
@@ -29,8 +29,22 @@ body{
     transition: 0.5s;
 }
 .container:hover{
-    -webkit-box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.69); 
-    box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 6px 5px 10px -2px rgba(34, 34, 34, 0.69); 
+    box-shadow: 6px 5px 10px -2px rgba(39, 39, 39, 0.69);
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 30%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+h1{
+   
+    text-align: center;
+    font-size: 2rem;
 }
 
 .form-group, .btn-block{
