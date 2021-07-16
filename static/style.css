@@ -11,3 +11,29 @@ body{
     font-family: sans-serif;
     
 }
+
+.container{
+    width: 350px;
+    height: 520px;
+    background:rgb(218, 216, 216);
+    color:rgb(27, 1, 27);
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 60px 40px;
+}
+.container{
+    transition: 0.5s;
+}
+.container:hover{
+    -webkit-box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.69); 
+    box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.69);
+}
+
+.form-group, .btn-block{
+    margin-top: 20px;
+}
+
