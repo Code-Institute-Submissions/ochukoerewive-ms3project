@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(/static/images/login1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    background-position: center;
+    font-family: sans-serif;
+    
+}
