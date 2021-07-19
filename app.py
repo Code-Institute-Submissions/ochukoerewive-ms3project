@@ -2,6 +2,7 @@ import os
 from flask import Flask, flash, render_template, url_for, redirect, request, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 import bcrypt
 if os.path.exists("env.py"):
     import env
