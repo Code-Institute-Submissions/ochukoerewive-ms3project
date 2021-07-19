@@ -1,4 +1,13 @@
 
+/* nav */
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* Loggin style*/
+
 .container{
     width: 340px;
     height: 520px;

@@ -19,26 +19,29 @@ def index():
     if "username" in session:
         return "You are loggedd in as" + session["username"]
 
-    return render_template("index.html")
+    return render_template("base.html")
 
-@app.route("/login")
+@app.route("/login", methods=["POST", "GET"])
 def login():
-    return ""
+    return render_template("login.html")
 
 @app.route("/register", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
-        users = mongo.db.users
-        existing_user = users.find_one({"name" : request.form["username"]})
+        existing_user = mongo.db.products.users.find_one({"username": request.form.get("username")})
 
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form["pass"].encode("utf-8"), bcrypt.gensalt())
-            users.insert({"name" : request.form["username"], "password" : hashpass })
-            session["username"] = request.form["username"]
-            return redirect(url_for("index"))
-
-        return "That username already exists"
-    
+        if existing_user:
+            flash("user already exist")
+            return redirect(url_for('base.html'))
+        
+        else:
+            form = {
+                "username": request.form.get("username"),
+                "password": request.form.get("password")
+            }
+            mongo.db.products.users.insert_one(form)
+            flash("You have registered successfully")
+            return redirect(url_for('register'))
     return render_template("register.html")
 
 
