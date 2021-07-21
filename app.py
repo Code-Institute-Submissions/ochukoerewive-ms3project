@@ -15,6 +15,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# The login and registration section 
 @app.route("/")
 def index():
     if "username" in session:
@@ -26,21 +27,31 @@ def index():
 def login():
     return render_template("login.html")
 
+@app.route("/email", methods=["POST", "GET"])
+def email():
+    return render_template("login.html")
+
 @app.route("/register", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
-        existing_user = mongo.db.products.users.find_one({"username": request.form.get("username")})
+        #check if the user already exists in db
+        existing_user = mongo.db.products.users.find_one(
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("user already exist")
-            return redirect(url_for('base.html'))
+            flash("user already exists")
+            return redirect(url_for("base"))
         
         else:
-            form = {
-                "username": request.form.get("username"),
-                "password": request.form.get("password")
+            register = {
+                "username": request.form.get("username").lower(),
+                 "password": request.form.get("password")
+               # "password": generate_password_hash(request.form.get("password"))
             }
-            mongo.db.products.users.insert_one(form)
+            mongo.db.products.users.insert_one(register)
+
+            #putting new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
             flash("You have registered successfully")
             return redirect(url_for('register'))
     return render_template("register.html")
