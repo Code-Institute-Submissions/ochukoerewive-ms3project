@@ -8,17 +8,17 @@
             <form method="POST" action="{{ url_for('register') }}">
                 <div class="form-group">
                     <label for="exampleInputUsername">Username</label>
-                    <input type="text"class="form-control" name="username" placeholder="Username">
+                    <input type="text"class="form-control" name="username" placeholder="Username" minilength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail">Email Address</label>
-                    <input type="text"class="form-control" name="emailaddress" placeholder="Email Address">
+                    <input type="text"class="form-control" name="emailaddress" placeholder="Email Address" class="validate" required>
                 </div>
 
                 <div class="form-group" >
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password"class="form-control" name="pass" placeholder="Password">
+                    <input type="password"class="form-control" name="pass" placeholder="Password" minilength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 </div>
 
                 <button type="submit" class="btn-primary btn-block col-md-12" >Register</button>
