@@ -20,8 +20,8 @@ mongo = PyMongo(app)
 def index():
     if "username" in session:
         return "You are loggedd in as" + session["username"]
-
-    return render_template("base.html")
+        
+    return render_template("login.html")
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
@@ -39,22 +39,27 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("user already exists")
-            return redirect(url_for("base"))
+            flash("User already exists")
+            return redirect(url_for("home"))
         
         else:
             register = {
                 "username": request.form.get("username").lower(),
                  "password": request.form.get("password")
-               # "password": generate_password_hash(request.form.get("password"))
+                 # "password": generate_password_hash(request.form.get("password"))
             }
             mongo.db.products.users.insert_one(register)
 
             #putting new user into 'session' cookie
             session["user"] = request.form.get("username").lower()
             flash("You have registered successfully")
-            return redirect(url_for('register'))
+            return redirect(url_for('home'))
     return render_template("register.html")
+
+
+@app.route("/")
+def home():
+    return render_template("home.html") 
 
 
 if __name__ == "__main__":
