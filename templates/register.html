@@ -1,27 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Registration form-->
+<h3 class="center-align">Register</h3>
+
 <div class="container">
-    <img src="static/images/avatar.png" class="avatar" alt="">
-       <div class="row">
+    <!--USERNAME FIELD-->
+    <div class="row">
         <div class="col-md-12 col-md-offset-4">
             <form method="POST" action="{{ url_for('register') }}">
                 <div class="form-group">
-                    <label for="exampleInputUsername">Username</label>
+                    <label for="username">Username</label>
                     <input type="text"class="form-control" name="username" placeholder="Username" minilength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 </div>
-
+<!--EMAIL FIELD-->
                 <div class="form-group">
-                    <label for="exampleInputEmail">Email Address</label>
-                    <input type="text"class="form-control" name="emailaddress" placeholder="Email Address" class="validate" required>
+                    <label for="email">Email Address</label>
+                    <input type="text"class="form-control" name="email" placeholder="Email Address" class="validate" required>
                 </div>
-
+<!--REGISTER FIELD-->
                 <div class="form-group" >
-                    <label for="exampleInputPassword1">Password</label>
+                    <label for="password">Password</label>
                     <input type="password"class="form-control" name="password" placeholder="Password" minilength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 </div>
 
-                <button type="submit" class="btn-primary btn-block col-md-12" >Register</button>
+                <button type="submit" class="col s12 btn-large pink darken-4 text-shadow" >Register</button>
 
             </form>
             <br>
