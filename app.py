@@ -15,8 +15,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
-
+# The registration section
 @app.route("/register", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
@@ -27,23 +26,22 @@ def register():
             flash("user already exists")
             return redirect(url_for("home"))
         
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": request.form.get("password")
-            #"password": generate_password_hash(request.form.get("password"))
-             #"password": request.form.get("password")
-        }
-        mongo.db.products.users.insert_one(register)
+        else:
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": request.form.get("password")
+                 # "password": generate_password_hash(request.form.get("password"))
+            }
+            mongo.db.products.users.insert_one(register)
 
-        #putting new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("You have registered successfully")
-        return redirect(url_for("profile", username=session["user"]))
+            #putting new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
+            flash("You have registered successfully")
+            return redirect(url_for('register'))
     return render_template("register.html")
 
 
-# The login and registration section 
-
+# The login section 
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
@@ -68,23 +66,11 @@ def login():
 
     return render_template("login.html")
 
-
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     #grabbing the session username from the db
     username = mongo.db.users.find_one({"username":session["user"]})["username"]
     return render_template("profile.html", username=username)
-
-
-@app.route("/email", methods=["POST", "GET"])
-def email():
-    return render_template("login.html")
-
-
-
-@app.route("/")
-def home():
-    return render_template("home.html") 
 
 
 if __name__ == "__main__":
