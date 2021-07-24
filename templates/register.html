@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Registration form-->
-<h3 class="center-align">Register</h3>
+
 
 <div class="container">
     <!--USERNAME FIELD-->
+    <h3 class="center-align">Register</h3>
     <div class="row">
         <div class="col-md-12 col-md-offset-4">
             <form method="POST" action="{{ url_for('register') }}">
@@ -22,11 +23,10 @@
                     <label for="password">Password</label>
                     <input type="password"class="form-control" name="password" placeholder="Password" minilength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 </div>
-
+                <br>
                 <button type="submit" class="col s12 btn-large pink darken-4 text-shadow" >Register</button>
 
             </form>
-            <br>
           
         </div>
 
