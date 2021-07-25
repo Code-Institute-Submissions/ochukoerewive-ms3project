@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-            <h3 class="center-align light-blue-text text-darken-4">
-                {{ username }}'s profile
-            </h3>
-        </div>
 
+
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <div class="card-panel">
+      <h3 class="center-align light-blue-text text-darken-4">
+        {{ username }}'s profile
+      </h3>
     </div>
 
+  </div>
+
 </div>
+
+<div class="carousel carousel-slider" data-indicators ="true">
+  <a class="carousel-item" href="#one!" class="carousel-item" ><img src="static/images/parkinglot1.jpg"></a>
+  <a class="carousel-item" href="#one!" class="carousel-item" ><img src="static/images/parkinglot2.jpg"></a>
+</div>
+
+
 
 {% endblock%}
