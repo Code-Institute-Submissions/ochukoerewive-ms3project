@@ -3,11 +3,14 @@
     padding: 0;
 }
 .body1{
+    
     text-align: center;
+
 }
 .wrapper{
     width: 80%;
     margin: 0 auto;
+    padding-top:5%
 }
 
 .imglot1{
@@ -19,12 +22,26 @@
     background-size: cover;
     background-position:center center ;
 }
-.banner-area h2{
-    padding-top:2%;
+.banner-area{
+    padding-top:-8%;
     font-size:70px;
     text-transform: uppercase;
     color:rgb(5, 3, 3);
 }
+.banner-area1{
+    margin-top:-150px;
+    font-size:50px;
+    text-transform: uppercase;
+    text-align: center;
+    color:rgb(255, 255, 255);
+    text-shadow: 2px 2px 6px rgb(31, 31, 31);
+}
+
+
+/*Selecting Lot to park your car */
+
+
+
 
 
 /* nav */
