@@ -92,6 +92,26 @@ def home():
 def park():
     return render_template("park.html")
 
+
+# INSERTING VEHICLE INFORMATION INTO DB
+@app.route("/park", methods=["POST", "GET"])
+def park():
+    if request.method == "POST":
+        park = {
+            "lot": request.form.get("lot").lower(),
+            "vehicle": request.form.get("vehicle").lower(),
+            "model": request.form.get("model").lower(),
+            "year": request.form.get("year").lower(),
+            "color": request.form.get("color").lower()
+        }
+        mongo.db.products.vehicle-information.insert_one(park)
+         #putting new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Thank you for parking here!")
+        
+    return render_template("home.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
