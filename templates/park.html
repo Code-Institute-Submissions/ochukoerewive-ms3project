@@ -8,13 +8,13 @@
 <div class="vehicle-information">
 
   <form>
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" name="lot" required>
       <option selected>SELECT LOT TO PACK VEHICLE</option>
       <option value="1">Lot One</option>
       <option value="2">Lot Two</option>
       <option value="3">Lot Three</option>
     </select>
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" name="vehicle" required>
       <option selected>VEHICLE MAKE</option>
       <option value="1">TOYOTA</option>
       <option value="2">BMW</option>
@@ -32,22 +32,22 @@
 
     <div class="row">
       <div class="col">
-        <input type="text" class="carmodel" placeholder="Model" aria-label="Model">
+        <input type="text" class="carmodel" placeholder="Model" aria-label="Model" name="model" required>
       </div>
       <div class="col">
-        <input type="text" class="year" placeholder="Year" aria-label="Year">
+        <input type="text" class="year" placeholder="Year" aria-label="Year" name="year" required>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <input type="text" class="platenumber" placeholder="Plate Number" aria-label="Plate Number">
+        <input type="text" class="platenumber" placeholder="Plate Number" aria-label="Plate Number" name="plate number" required>
       </div>
       <div class="col">
-        <input type="text" class="color" placeholder="Color of Car" aria-label="color">
+        <input type="text" class="color" placeholder="Color of Car" aria-label="color" name="color" required>
       </div>
     </div>
     <div class="d-grid gap-2 ">
-      <button class="btn btn-primary col-8 mx-auto" type="button">SUBMIT</button>
+      <button class="btn btn-primary col-8 mx-auto" type="submit">SUBMIT</button>
     </div>
 
 

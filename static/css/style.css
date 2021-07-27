@@ -101,6 +101,7 @@ h1{
 
 /*----------------------------*/
 .vehicle-information{
+    width:80%;
     color:rgb(27, 1, 27);
     top: 50%;
     left: 50%;
