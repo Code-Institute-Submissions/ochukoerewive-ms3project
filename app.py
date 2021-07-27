@@ -88,10 +88,6 @@ def logout():
 def home():
     return render_template("home.html")
 
-@app.route("/park")
-def park():
-    return render_template("park.html")
-
 
 # INSERTING VEHICLE INFORMATION INTO DB
 @app.route("/park", methods=["POST", "GET"])
