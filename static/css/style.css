@@ -29,12 +29,13 @@
     color:rgb(5, 3, 3);
 }
 .banner-area1{
-    margin-top:-150px;
-    font-size:50px;
+    margin-top:-100px;
+   
+    font-size:40px;
     text-transform: uppercase;
     text-align: center;
-    color:rgb(255, 255, 255);
-    text-shadow: 2px 2px 6px rgb(31, 31, 31);
+    color:rgb(0, 0, 0);
+    text-shadow: 2px 2px 6px rgb(212, 212, 212);
 }
 
 
@@ -97,3 +98,17 @@ h1{
 .carousel{
     height:700px !important;
 }
+
+/*----------------------------*/
+.vehicle-information{
+    color:rgb(27, 1, 27);
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 60px 40px;
+    background-color:#fff;
+}
+
