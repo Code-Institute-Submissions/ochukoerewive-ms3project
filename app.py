@@ -93,6 +93,7 @@ def home():
 @app.route("/park", methods=["POST", "GET"])
 def park():
     if request.method == "POST":
+
         park = {
             "lot": request.form.get("lot").lower(),
             "vehicle": request.form.get("vehicle").lower(),
@@ -100,12 +101,9 @@ def park():
             "year": request.form.get("year").lower(),
             "color": request.form.get("color").lower()
         }
-        mongo.db.products.vehicle-information.insert_one(park)
-         #putting new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Thank you for parking here!")
-        
-    return render_template("home.html")
+        mongo.db.vehicleinfo.insert_one(park)
+    return render_template("park.html")
+    
 
 
 if __name__ == "__main__":
