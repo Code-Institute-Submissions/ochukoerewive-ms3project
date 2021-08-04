@@ -87,9 +87,10 @@ def home():
     return render_template("home.html")
 
 # still working on this page
-@app.route("/park", methods=["POST"])
+@app.route("/park", methods=["GET", "POST"])
 def park():
-    vehicleinfo = {
+    if request.method == "POST":
+        vehicleinfo = {
             "lot": request.form.get("lot"),
             "vehicle": request.form.get("vehicle"),
             "model": request.form.get("model"),
@@ -97,8 +98,11 @@ def park():
             "Plate-Number": request.form.get("Plate-Number"),
             "color": request.form.get("color")
         }
-
+        mongo.db.vehicleinfo.insert_one(vehicleinfo)
+        flash("Thank you for using Our Services")
+        return redirect(url_for("home", username=session["user"]))
     return render_template("park.html")
+
        
 
 if __name__ == "__main__":

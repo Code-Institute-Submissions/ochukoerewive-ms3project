@@ -7,11 +7,18 @@
     text-align: center;
 
 }
-.wrapper{
+.nav-wrapper{
+    width:95%;
+    padding-left: 5%;
+}
+
+.card{
     width: 80%;
     margin: 0 auto;
-    padding-top:5%
+    
 }
+
+
 
 .imglot1{
     width:100%;
@@ -29,14 +36,13 @@
     color:rgb(5, 3, 3);
 }
 .banner-area1{
-    margin-top:-100px;
+    margin-top:-40px;
    
     font-size:40px;
     text-transform: uppercase;
     text-align: center;
     color:rgb(0, 0, 0);
     text-shadow: 2px 2px 6px rgb(212, 212, 212);
-}
 
 
 /*Selecting Lot to park your car */
@@ -91,8 +97,10 @@ h1{
     margin-top: 20px;
 }
 
-.flashes h4{
-    line-height: 2;
+.flashes h2{
+    font:10px;
+    line-height: 1;
+    background-color: white;
 }
 
 .carousel{
@@ -101,7 +109,7 @@ h1{
 
 /*----------------------------*/
 .vehicleinfo{
-    width:80%;
+    width:100%;
     color:rgb(27, 1, 27);
     top: 50%;
     left: 50%;
