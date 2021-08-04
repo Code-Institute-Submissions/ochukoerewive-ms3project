@@ -7,13 +7,10 @@
 </div>
 <div class="vehicleinfo">
 
-  <form class="col s12" form method="POST" action="{{url_for('park') }}">
-    <select class="form-select" aria-label="Default select example" name="vehicleinfo" required>
-      <option selected>SELECT LOT TO PACK VEHICLE</option>
-      <option value="1">Lot One</option>
-      <option value="2">Lot Two</option>
-      <option value="3">Lot Three</option>
-    </select>
+  <form class="col s12" form method="POST" name="vehicleinfo" action="{{url_for('park') }}">
+  <h1 class="lot1">
+      lot One
+  </h1>
     <select class="form-select" aria-label="Default select example" name="vehicle" required>
       <option selected>VEHICLE MAKE</option>
       <option value="1">TOYOTA</option>

@@ -86,10 +86,10 @@ def logout():
 def home():
     return render_template("home.html")
 
-@app.route("/park")
+# still working on this page
+@app.route("/park", methods=["POST"])
 def park():
-
-    park = {
+    vehicleinfo = {
             "lot": request.form.get("lot"),
             "vehicle": request.form.get("vehicle"),
             "model": request.form.get("model"),
@@ -97,10 +97,10 @@ def park():
             "Plate-Number": request.form.get("Plate-Number"),
             "color": request.form.get("color")
         }
-        
+
     return render_template("park.html")
-    
- 
+       
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
