@@ -82,9 +82,23 @@ def logout():
     session.clear()
     return redirect(url_for("login"))
 
-@app.route("/home")
+@app.route("/")
 def home():
     return render_template("home.html")
+
+@app.route("/park")
+def park():
+
+    park = {
+            "lot": request.form.get("lot"),
+            "vehicle": request.form.get("vehicle"),
+            "model": request.form.get("model"),
+            "year": request.form.get("year"),
+            "Plate-Number": request.form.get("Plate-Number"),
+            "color": request.form.get("color")
+        }
+        
+    return render_template("park.html")
     
  
 if __name__ == "__main__":

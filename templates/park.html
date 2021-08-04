@@ -7,7 +7,7 @@
 </div>
 <div class="vehicleinfo">
 
-  <form class="col s12" form method="POST" action="#">
+  <form class="col s12" form method="POST" action="{{url_for('park') }}">
     <select class="form-select" aria-label="Default select example" name="lot" required>
       <option selected>SELECT LOT TO PACK VEHICLE</option>
       <option value="1">Lot One</option>
@@ -40,7 +40,8 @@
     </div>
     <div class="row">
       <div class="col s12">
-        <input type="text" class="platenumber" placeholder="Plate Number" aria-label="Plate Number" name="plate number" required>
+        <input type="text" class="platenumber" placeholder="Plate-Number" aria-label="Plate Number" name="plate number"
+          required>
       </div>
       <div class="col s12">
         <input type="text" class="color" placeholder="Color of Car" aria-label="color" name="color" required>
@@ -49,9 +50,7 @@
     <div class="d-grid gap-2 s12">
       <button class="btn btn-primary col-8 mx-auto" type="submit">SUBMIT</button>
     </div>
-
-
-    </form>
+  </form>
 </div>
 
 {% endblock%}
