@@ -62,7 +62,6 @@ def login():
             # Username doesn't exist
             flash("Incorrect Username or Password")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 
@@ -73,7 +72,6 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-    
     return redirect(url_for("login"))
 
 
@@ -87,25 +85,8 @@ def logout():
 @app.route("/home")
 def home():
     return render_template("home.html")
-
-
-# INSERTING VEHICLE INFORMATION INTO DB
-@app.route("/park", methods=["POST", "GET"])
-def park():
-    if request.method == "POST":
-
-        park = {
-            "lot": request.form.get("lot").lower(),
-            "vehicle": request.form.get("vehicle").lower(),
-            "model": request.form.get("model").lower(),
-            "year": request.form.get("year").lower(),
-            "color": request.form.get("color").lower()
-        }
-        mongo.db.vehicleinfo.insert_one(park)
-    return render_template("park.html")
     
-
-
+ 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

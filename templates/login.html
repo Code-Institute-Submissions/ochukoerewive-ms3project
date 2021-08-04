@@ -6,8 +6,9 @@
     <h1>Login Here</h1>
     <div class="row">
         <div class="col-md-12 col-md-offset-4">
-            <form method=POST action="{{url_for('login') }}">
+            <form method="POST" action="{{url_for('login') }}">
                 <div class="form-group">
+                    <i class="fas fa-user-circle prefix"></i>
                     <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" placeholder="Username" minilength="5"
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
