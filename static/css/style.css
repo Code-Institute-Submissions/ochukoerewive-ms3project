@@ -18,6 +18,20 @@
     
 }
 
+.carousel-item {
+    height:32rem;
+    background:#777;
+    color:white;
+    position:relative;
+}
+
+.container2 {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding-bottom:50px;
+}
 
 
 .imglot1{
@@ -48,15 +62,8 @@
 /*Selecting Lot to park your car */
 
 
-
-
-
 /* nav */
 
-.text-shadow {
-   
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
 
 
 /* Loggin style*/
