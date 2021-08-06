@@ -2,11 +2,108 @@
     margin: 0;
     padding: 0;
 }
+/* Home page styling */
+
+/*
 .body1{
-    
+     height: 100%;
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center center;
+    position: relative;
     text-align: center;
 
 }
+*/
+.imglot1{
+    width:100%;
+    height: 100%;
+    position: center;
+    top: 100px;
+    -webkit-background-size:cover;
+    background-size: cover;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), ;
+    background-position:center center ;
+    text-align: center;
+}
+.banner-text{
+    position: absolute;
+    width:40%;
+    height: 300px;
+    margin: 40% 30%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color:white;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+.click{
+    width:400px;
+    background-position:center center ;
+    height: 100px;
+    text-decoration:none;
+    font-size:20px;
+   
+    display: inline-block;
+}
+
+
+.banner-area{
+    padding-top:-8%;
+    font-size:70px;
+    text-transform: uppercase;
+    color:rgb(5, 3, 3);
+}
+.banner-area1{
+    margin-top:-40px;
+    font-weight: bolder;
+    font-size:40px;
+    text-transform: uppercase;
+    text-align: center;
+    color:rgb(32, 32, 32);
+    text-shadow: 2px 2px 6px rgb(197, 197, 197);
+}
+
+.highway{
+    height:200px;
+    width: 500%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index:1;
+    background-repeat: repeat-x;
+    animation: highway 5s linear infinite;
+}
+
+@keyframes highway{
+    100% {
+        transform: translateX(-3400px);
+    }
+}
+
+.city {
+    height:250px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    z-index:1;
+    background-repeat: repeat-x;
+    animation: city 20s linear infinite;
+}
+
+@keyframes city
+{
+    100%{
+        transform: translateX(-1400px);
+    }
+}
+
+/* Home page styling */
+
+
 .nav-wrapper{
     width:95%;
     padding-left: 5%;
@@ -34,29 +131,7 @@
 }
 
 
-.imglot1{
-    width:100%;
-    height: 100%;
-    position: center;
-    top: 100px;
-    -webkit-background-size:cover;
-    background-size: cover;
-    background-position:center center ;
-}
-.banner-area{
-    padding-top:-8%;
-    font-size:70px;
-    text-transform: uppercase;
-    color:rgb(5, 3, 3);
-}
-.banner-area1{
-    margin-top:-40px;
-   
-    font-size:40px;
-    text-transform: uppercase;
-    text-align: center;
-    color:rgb(0, 0, 0);
-    text-shadow: 2px 2px 6px rgb(212, 212, 212);
+
 
 
 /*Selecting Lot to park your car */
