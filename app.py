@@ -72,6 +72,9 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
+
+    vehicleinfo = mongo.db.vehicleinfo.find()
+    return render_template("profile.html", vehicleinfo=vehicleinfo)
     return redirect(url_for("login"))
 
 
@@ -100,7 +103,7 @@ def park():
         }
         mongo.db.vehicleinfo.insert_one(vehicleinfo)
         flash("Thank you for using Our Services")
-        return redirect(url_for("home", username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("park.html")
 
        
