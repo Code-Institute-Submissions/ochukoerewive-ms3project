@@ -104,10 +104,11 @@ def park():
     return render_template("park.html")
 
 
-@app.route("/")
+
 @app.route("/tasks")
 def tasks():
-    return render_template("tasks.html")
+    tasks = mongo.db.vehicleinfo.find()
+    return render_template("tasks.html", vehicleinfo=tasks)
 
 
 if __name__ == "__main__":

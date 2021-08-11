@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>hELLO</h1>
+<div>
+    <div>
+    <img class="tasks-background" src="" alt="">
+</div>
+    <div clas="tasks-container">
+        {% for task in vehicleinfo %}
+        {{ task.lot }}<br>
+        {{ task.vehicle }}<br>
+        {{ task.model }}<br>
+        {{ task.year }}<br>
+
+        {% endfor %}
+    </div>
+    <h1>We thank you</h1>
+</div>
 
 {% endblock%}
