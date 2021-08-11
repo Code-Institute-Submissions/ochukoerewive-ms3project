@@ -72,9 +72,6 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-
-    vehicleinfo = mongo.db.vehicleinfo.find()
-    return render_template("profile.html", vehicleinfo=vehicleinfo)
     return redirect(url_for("login"))
 
 
@@ -106,7 +103,12 @@ def park():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("park.html")
 
-       
+
+@app.route("/")
+@app.route("/tasks")
+def tasks():
+    return render_template("tasks.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

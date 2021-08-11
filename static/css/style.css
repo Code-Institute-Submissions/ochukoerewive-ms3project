@@ -99,12 +99,29 @@
 
 /* profile page styling starts */
 .profile-name {
-    font-size:40px;
+    font-size:30px;
     color:black;
     padding-top:5%;
+}
+.task-button {
+    
+    margin-top: 10%;
 
+    
+}.task-button a {
+    width:60%;
+    margin-top: 1%;
+    margin-left: 20%;
+    
 }
 
+
+.task-button a {
+    width:60%;
+    margin-top: 1%;
+    margin-left: 20%;
+    
+}
 /* profile page styling ends here */
 
 
