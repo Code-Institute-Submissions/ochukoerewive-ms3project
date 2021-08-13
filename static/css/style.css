@@ -132,8 +132,8 @@
 
 .tasks-container{
     margin-top: 20px;
-    width: 50%;
-    color: wheat;
+   
+    color: rgb(0, 0, 0);
 
 }
 
@@ -178,9 +178,9 @@ h1{
 }
 
 .flashes h2{
+    margin-top: 10%;
     font:10px;
-    line-height: 1;
-    background-color: rgb(255, 255, 255);
+      
 }
 
 

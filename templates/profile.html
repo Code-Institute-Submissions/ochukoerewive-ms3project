@@ -8,11 +8,12 @@
   </h1>
 
 </div>
-<div class="task-button">
-  <a href="{{ url_for('tasks')}}" class="waves-effect waves-light btn-small">View Parking Lot</a>
-  <a href="" class="waves-effect waves-light btn-small">Button</a>
-  <a href="" class="waves-effect waves-light btn-small">Button</a>
+<div class="task-button" method="POST">
+  <a href="{{ url_for('tasks')}}" class="waves-effect waves-light btn-small" name="view-info">View Parking Lot</a>
+  <a href="" class="waves-effect waves-light btn-small" name="delete">DELETE LOT ADDRESS</a>
+  <a href="" class="waves-effect waves-light btn-small" name="">Button</a>
 </div>
 
-
+.
+0
 {% endblock%}
