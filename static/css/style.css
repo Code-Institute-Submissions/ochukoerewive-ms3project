@@ -116,24 +116,22 @@
 }
 
 
-.task-button a {
-    width:60%;
-    margin-top: 1%;
-    margin-left: 20%;
-    
-}
 /* profile page styling ends here */
 
-/* Tasks page styling starts*/
-.tasks-background{
-    width:100%;
-  
-}
-
-.tasks-container{
-    margin-top: 20px;
+Tasks page styling starts
+.tasks-contain {
+    margin-top:20%;
    
+}
+ 
+.tasks-container{
+
+    margin-top:10%;
+    font-size:20px;
     color: rgb(0, 0, 0);
+    text-align:center;
+    padding-bottom: 40px;
+
 
 }
 

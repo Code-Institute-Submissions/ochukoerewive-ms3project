@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
+<div class="tasks-contain">
     <div>
-    <img class="tasks-background" src="" alt="">
-</div>
+        <img class="tasks-background" src="" alt="">
+    </div>
     <div class="tasks-container" name="tasks" method="POST" action="">
         {% for task in vehicleinfo %}
-        {{ task.lot }}<br>
-        {{ task.vehicle }}<br>
-        {{ task.model }}<br>
-        {{ task.year }}<br>
+        <h1>LOT = {{ task.lot }}</h1>
+        <h1>VEHICLE = {{ task.vehicle }}</h1>
+        <h1>VEHICLE MODEL = {{ task.model }}</h1>
+        <h1>YEAR = {{ task.year }}</h1>
 
         {% endfor %}
     </div>
-    <h1>We thank you</h1>
+    <h1>We Thank You</h1>
 </div>
 
 {% endblock%}

@@ -106,8 +106,8 @@ def park():
 
 @app.route("/tasks", methods=["GET", "POST"])
 def tasks():
-    task = mongo.db.vehicleinfo.find_one_or_404()
-    return render_template("tasks.html", vehicleinfo=task)
+    tasks = mongo.db.vehicleinfo.find()
+    return render_template("tasks.html", vehicleinfo=tasks)
 
 
 if __name__ == "__main__":
