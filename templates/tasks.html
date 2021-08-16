@@ -5,15 +5,21 @@
     <div>
         <img class="tasks-background" src="" alt="">
     </div>
+    
+    {% if session.user == vehicleinfo.created_by %}
+    {% endif %}
     <div class="tasks-container" name="tasks" method="POST" action="">
         {% for task in vehicleinfo %}
+
         <h1>LOT = {{ task.lot }}</h1>
         <h1>VEHICLE = {{ task.vehicle }}</h1>
         <h1>VEHICLE MODEL = {{ task.model }}</h1>
         <h1>YEAR = {{ task.year }}</h1>
+        <h1>COLOR = {{ task.color }}</h1>
 
         {% endfor %}
     </div>
+    
     <h1>We Thank You</h1>
 </div>
 

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+        <div class="vehicleinfo">
+
+            <form class="col s12" form method="POST" name="edit_task" action="{{url_for('park') }}">
+              <select class="form-select" aria-label="Default select example" name="lot" required>
+                <option selected>SELECT LOT TO PACK VEHICLE</option>
+                <option value="Lot One">Lot One</option>
+                <option value="Lot Two">Lot Two</option>
+                <option value="Lot Three">Lot Three</option>
+              </select>
+              <select class="form-select" aria-label="Default select example" name="vehicle" required>
+                <option selected>VEHICLE MAKE</option>
+                <option value="TOYOTA">TOYOTA</option>
+                <option value="BMW">BMW</option>
+                <option value="MECEDES">MECEDES</option>
+                <option value="FORD">FORD</option>
+                <option value="CHEVEROLET">CHEVEROLET</option>
+                <option value="AUDI">AUDI</option>
+                <option value="VOLKS">VOLKS</option>
+                <option value="NISSAN">NISSAN</option>
+                <option value="HONDA">HONDA</option>
+                <option value="BULK">BULK</option>
+                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="KIA">KIA</option>
+              </select>
+          
+              <div class="row">
+                <div class="col s12">
+                  <input type="text" class="carmodel" placeholder="Model" aria-label="Model" name="model" required>
+                </div>
+                <div class="col s12">
+                  <input type="text" class="year" placeholder="Year" aria-label="Year" name="year" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <input type="text" class="platenumber" placeholder="Plate-Number" aria-label="Plate Number" name="Plate-Number"
+                    required>
+                </div>
+                <div class="col s12">
+                  <input type="text" class="color" placeholder="Color of Car" aria-label="color" name="color" required>
+                </div>
+              </div>
+              <div class="d-grid gap-2 s12">
+                <button class="btn btn-primary col-8 mx-auto" type="submit">SUBMIT</button>
+              </div>
+            </form>
+          </div>
+
+{% endblock%}

@@ -109,6 +109,12 @@ def tasks():
     tasks = mongo.db.vehicleinfo.find()
     return render_template("tasks.html", vehicleinfo=tasks)
 
+#@app.route("/edit_task/<task_id>", methods=["GET","PORT"])
+#def edit_task(task_id):
+#    tasks = mongo.db.vehicleinfo.find_one({"_id": ObjectId(task_id)})
+#    tasks = mongo.db.vehicleinfo.find()
+#    return render_template("edit_task.html", tasks=task, vehicleinfo=tasks)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
