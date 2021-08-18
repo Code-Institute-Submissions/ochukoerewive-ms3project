@@ -68,23 +68,26 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # taking the username from the db
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
     if session["user"]:
         return render_template("profile.html", username=username)
     return redirect(url_for("login"))
 
-
+# Route for logout
 @app.route("/logout")
 def logout():
     # Remove user from session cookies
-    flash("You are logged out")
-    session.clear()
+    flash("You've been logged out")
+    session.pop("user")
     return redirect(url_for("login"))
 
+# Route for home page
 @app.route("/")
 def home():
     return render_template("home.html")
+
 
 # still working on this page
 @app.route("/park", methods=["GET", "POST"])
@@ -106,14 +109,16 @@ def park():
 
 @app.route("/tasks", methods=["GET", "POST"])
 def tasks():
-    tasks = mongo.db.vehicleinfo.find()
-    return render_template("tasks.html", vehicleinfo=tasks)
+    if "user" in session:
+        tasks = mongo.db.vehicleinfo.find()
+        return render_template("tasks.html", vehicleinfo=tasks)
 
-#@app.route("/edit_task/<task_id>", methods=["GET","PORT"])
-#def edit_task(task_id):
-#    tasks = mongo.db.vehicleinfo.find_one({"_id": ObjectId(task_id)})
-#    tasks = mongo.db.vehicleinfo.find()
-#    return render_template("edit_task.html", tasks=task, vehicleinfo=tasks)
+
+@app.route("/edit_task/<task_id>", methods=["GET","PORT"])
+def edit_task(task_id):
+    tasks = mongo.db.vehicleinfo.find_one({"_id": ObjectId(task_id)})
+    tasks = mongo.db.vehicleinfo.find()
+    return render_template("edit_task.html", tasks=tasks, vehicleinfo=tasks)
 
 
 if __name__ == "__main__":

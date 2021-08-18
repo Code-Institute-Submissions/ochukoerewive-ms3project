@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <div>
   <img class="imglot1" src="static/images/login1.jpg" alt="">
 </div>
 <div class="vehicleinfo">
 
-  <form class="col s12" form method="POST" name="vehicleinfo" action="{{url_for('park') }}">
+  <form class="col s12" form method="POST" name="vehicleinfo"  action="{{url_for('park') }}">
+
     <select class="form-select" aria-label="Default select example" name="lot" required>
       <option selected>SELECT LOT TO PACK VEHICLE</option>
       <option value="Lot One">Lot One</option>
@@ -52,7 +52,4 @@
     </div>
   </form>
 </div>
-
-
-
 {% endblock%}

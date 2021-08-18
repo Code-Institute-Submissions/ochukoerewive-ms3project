@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+<!--This page allows users to add a review to their chosen game-->
+{% block content %}
+
+    <div class="row">
+        <form method="POST" action="{{ url_for('add_review', game_id=game._id) }}" class="col s12">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header grey darken-2 amber-text text-shadow">
+                        <i class="fas fa-caret-down"></i>Add review
+                    </div>
+                    <div class="collapsible-body white">
+                        <div class="input-field">
+                            <i class="fas fa-pen prefix"></i>
+                            <textarea id="review" name="review" class="materialize-textarea validate"
+                                required></textarea>
+                            <label for="review">Write your review here</label>
+                        </div>
+                        <!--Submit button-->
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <button type="submit"
+                                    class="btn grey darken-2 amber-text text-shadow waves-effect waves-light">
+                                    Submit <i class="fas fa-plus-square right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+{% endblock %}
