@@ -5,21 +5,22 @@
     <div>
         <img class="tasks-background" src="" alt="">
     </div>
- 
+
     <div class="tasks-container">
-        <p class="" name="vehicleinfo"  action="{{ url_for('park', vehicleinfo_id=vehicleinfo._id) }}">
+
         {% for task in vehicleinfo %}
+        <p class="" href="{{ url_for('tasks') }}" >
+            <h1>LOT = {{ task.lot }}</h1>
+            <h1>VEHICLE = {{ task.vehicle }}</h1>
+            <h1>VEHICLE MODEL = {{ task.model }}</h1>
+            <h1>YEAR = {{ task.year }}</h1>
 
-        <h1>LOT = {{ task.lot }}</h1>
-        <h1>VEHICLE = {{ task.vehicle }}</h1>
-        <h1>VEHICLE MODEL = {{ task.model }}</h1>
-        <h1>YEAR = {{ task.year }}</h1>
-        <h1>COLOR = {{ task.color }}</h1>
-
+            <h1>COLOR = {{ task.color }}</h1>
+        </p>
         {% endfor %}
-    </p>
+
     </div>
-    
+
     <h1>We Thank You</h1>
 </div>
 

@@ -1,4 +1,3 @@
-
 import os
 from flask import Flask, flash, render_template, url_for, redirect, request, session
 from flask_pymongo import PyMongo
@@ -92,22 +91,19 @@ def home():
 @app.route("/park", methods=["GET", "POST"])
 def park():
     if request.method == "POST":
-        parking = {
+        task = {
             "lot": request.form.get("lot"),
             "vehicle": request.form.get("vehicle"),
             "model": request.form.get("model"),
             "year": request.form.get("year"),
             "Plate-Number": request.form.get("Plate-Number"),
             "color": request.form.get("color"),
-             "created_by": session["user"]
+            "created_by": session["user"]
         }
-        mongo.db.vehicleinfo.insert_one(parking)
+        mongo.db.vehicleinfo.insert_one(task)
         flash("Thank you for using Our Services")
-        return redirect(url_for("profile" ))
-
-    vehicleinfo = mongo.db.vehicleinfo.find()
-    return render_template("park.html", vehicleinfo=vehicleinfo)
-    #return render_template("park.html")
+        return redirect(url_for("profile", username=session["user"]))
+    return render_template("park.html")
 
 
 @app.route("/tasks", methods=["GET", "POST"])
@@ -127,3 +123,5 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+
