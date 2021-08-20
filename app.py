@@ -99,24 +99,20 @@ def park():
             "Plate-Number": request.form.get("Plate-Number"),
             "color": request.form.get("color"),
             "created_by": session["user"]
+
         }
         mongo.db.vehicleinfo.insert_one(task)
         flash("Thank you for using Our Services")
-        return redirect(url_for("profile", username=session["user"]))
-    return render_template("park.html")
+        return redirect(url_for("profile"))
+    vehicleinfo = mongo.db.vehicleinfo.find()
+    return render_template("park.html", vehicleinfo=vehicleinfo)
 
 
 @app.route("/tasks", methods=["GET", "POST"])
 def tasks():
-    tasks = mongo.db.vehicleinfo.find()
-    return render_template("tasks.html", vehicleinfo=tasks)
-
-
-@app.route("/edit_task/<task_id>", methods=["GET","PORT"])
-def edit_task(task_id):
-    tasks = mongo.db.vehicleinfo.find_one({"_id": ObjectId(task_id)})
-    tasks = mongo.db.vehicleinfo.find()
-    return render_template("edit_task.html", tasks=task, vehicleinfo=tasks)
+    task = list(mongo.db.vehicleinfo.find({"created_by": session["user"]}))
+    vehicleinfo = mongo.db.vehicleinfo.find()
+    return render_template("tasks.html", task=task, vehicleinfo=vehicleinfo)
 
 
 if __name__ == "__main__":
