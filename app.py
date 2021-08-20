@@ -107,7 +107,7 @@ def park():
     vehicleinfo = mongo.db.vehicleinfo.find()
     return render_template("park.html", vehicleinfo=vehicleinfo)
 
-
+#  Spooling information from the data base to a specific user
 @app.route("/tasks", methods=["GET", "POST"])
 def tasks():
     task = list(mongo.db.vehicleinfo.find({"created_by": session["user"]}))

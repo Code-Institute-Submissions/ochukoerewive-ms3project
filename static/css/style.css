@@ -124,15 +124,10 @@ Tasks page styling starts
    
 }
  
-.tasks-container{
-
+.card-task{
     margin-top:10%;
-    font-size:20px;
-    color: rgb(0, 0, 0);
-    text-align:center;
-    padding-bottom: 40px;
-
-
+    width: 50%;
+   
 }
 
 
