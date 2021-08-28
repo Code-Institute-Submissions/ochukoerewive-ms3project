@@ -3,15 +3,59 @@
 
 
 <div class="profile-name">
-  <h1>{{ username }}'s profile
+  <h1>Parking Detail </h1>
     <hr class="profile-line">
-  </h1>
+</div>
 
+
+<!-- User information table -->
+<div class="row">
+  <div class="table-task">
+<table>
+   <tbody>
+    
+    {% for park in parkers %}
+    {% if session.user == park.parked_by %}
+      <td scope="col">LOT:</td>
+      <td>{{ park.lot }}</td>
+    </tr>
+    <tr>
+      <td>VEHICLE:</td>
+      <td>{{ park.vehicle }}</td>
+      
+    </tr>
+    <tr>
+      <td>MODEL:</td>
+      <td>{{ park.model }}</td>
+      
+    </tr>
+    <tr>
+      <td>YEAR:</td>
+      <td>{{ park.year }}</td>
+    </tr>
+    <tr>
+      <td>PLATE NUMBER:</td>
+      <td>{{ park.plate_number }}</td>
+    </tr>
+    <tr>
+      <td>COLOR:</td>
+      <td>{{ park.color }}</td>
+    </tr>
+    
+  </tbody>
+</table>
 </div>
+</div>
+<!-- User information table ends -->
+
+
 <div class="task-button" method="POST">
-  <a href="{{ url_for('tasks') }}" class="waves-effect waves-light btn-small" name="view-info">View Parking Lot</a>
-  <a href="" class="waves-effect waves-light btn-small" name="delete">DELETE LOT ADDRESS</a>
-  <a href="" class="waves-effect waves-light btn-small fa fa-edit" name="">Edit Task</a>
+  <a href="{{ url_for('edit_park', park_id=park._id) }}" class="waves-effect waves-light btn-small fa fa-edit" name="">Edit Parking</a>
+  <a href="{{ url_for('delete_parking', park_id=park._id) }}" class="waves-effect waves-light btn-small" name="delete">Delete Parking</a>
 </div>
+
+  {% endif %}
+  {% endfor %}
+  
 
 {% endblock%}

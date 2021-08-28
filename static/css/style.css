@@ -127,9 +127,13 @@ Tasks page styling starts
 .card-task{
     margin-top:10%;
     width: 50%;
-   
-}
+   }
 
+.table-task{
+    margin-top: 10%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
 
 /* nav */
 .nav-wrapper {
