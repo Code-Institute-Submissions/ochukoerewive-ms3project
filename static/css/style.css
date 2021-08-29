@@ -105,7 +105,7 @@
 }
 .task-button {
     
-    margin-top: 10%;
+    margin-top: 5%;
 
     
 }.task-button a {
@@ -130,7 +130,7 @@ Tasks page styling starts
    }
 
 .table-task{
-    margin-top: 10%;
+    margin-top: 3%;
     padding-left: 30%;
     padding-right: 30%;
 }
@@ -180,6 +180,13 @@ h1{
       
 }
 
+/* Mobile dropdown */
+.sidenav{
+    margin-top: 7%;
+}
+.sidenav li{
+    margin-top: 9%;
+}
 
 /*----------------------------*/
 

@@ -41,7 +41,6 @@
         </nav>
         <!--This is for mobile sidenav-->
         <ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-blue-text text-darken-4">Shop Now</h4></li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('park') }}">Park Your Car</a></li>
