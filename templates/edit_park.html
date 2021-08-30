@@ -6,7 +6,7 @@
 </div>
 <div class="vehicle_info">
 
-  <form class="col s12" form method="POST" name="vehicleinfo"  action="{{ url_for('edit_park', park_id=park._id) }}">
+  <form class="col s12" form method="POST" name="vehicleinfo" action="{{ url_for('edit_park', park_id=park._id) }}">
 
     <select class="form-select" aria-label="Default select example" name="lot" required>
       <option value="{{ park.lot }}" selected>{{ park.lot }}</option>
@@ -33,19 +33,22 @@
 
     <div class="row">
       <div class="col s12">
-        <input type="text" class="carmodel" placeholder="Model" value="{{ park.model }}" aria-label="Model" name="model" required>
+        <input type="text" class="carmodel" placeholder="Model" value="{{ park.model }}" aria-label="Model" name="model"
+          required>
       </div>
       <div class="col s12">
-        <input type="text" class="year" placeholder="Year" value="{{ park.year }}" aria-label="Year" name="year" required>
+        <input type="text" class="year" placeholder="Year" value="{{ park.year }}" aria-label="Year" name="year"
+          required>
       </div>
     </div>
     <div class="row">
       <div class="col s12">
-        <input type="text" class="platenumber" placeholder="Plate-Number" value="{{ park.plate_number }}" aria-label="Plate Number" name="plate_number"
-          required>
+        <input type="text" class="platenumber" placeholder="Plate-Number" value="{{ park.plate_number }}"
+          aria-label="Plate Number" name="plate_number" required>
       </div>
       <div class="col s12">
-        <input type="text" class="color" placeholder="Color of Car" value="{{ park.color }}" aria-label="color" name="color" required>
+        <input type="text" class="color" placeholder="Color of Car" value="{{ park.color }}" aria-label="color"
+          name="color" required>
       </div>
     </div>
     <div class="d-grid gap-2 s12">

@@ -60,7 +60,7 @@
     margin-left: 2%;
     margin-right: 2%;
     text-align: center;
-  }
+}
 
 .home-container div{
     padding:2%;
@@ -78,7 +78,7 @@
 
 /* Home page styling ends here */
 
-/* Parking page stylingstarts */
+/* Parking page styling starts */
 
 .vehicle_info{
     width:100%;
@@ -91,11 +91,9 @@
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 60px 40px;
- 
-}
+ }
 
-
-/* parking page styling ends here */
+/* Parking styling ends here */
 
 /* profile page styling starts */
 .profile-name {
@@ -104,30 +102,25 @@
     padding-top:5%;
 }
 .task-button {
-    
-    margin-top: 5%;
+   margin-top: 5%;
+}
 
-    
-}.task-button a {
+.task-button a {
     width:60%;
     margin-top: 1%;
     margin-left: 20%;
-    
 }
 
-
 /* profile page styling ends here */
-
-Tasks page styling starts
+/* task page styling ends here */
 .tasks-contain {
     margin-top:20%;
-   
 }
  
 .card-task{
     margin-top:10%;
     width: 50%;
-   }
+}
 
 .table-task{
     margin-top: 3%;
@@ -140,8 +133,6 @@ Tasks page styling starts
     width:95%;
     padding-left: 5%;
 }
-
-
 
 /* Loggin style*/
 
@@ -163,9 +154,7 @@ Tasks page styling starts
     box-shadow: 6px 5px 10px -2px rgba(39, 39, 39, 0.69);
 }
 
-
 h1{
-   
     text-align: center;
     font-size: 2rem;
 }
@@ -182,7 +171,7 @@ h1{
 
 /* Mobile dropdown */
 .sidenav{
-    margin-top: 7%;
+    margin-top: 5%;
 }
 .sidenav li{
     margin-top: 9%;
