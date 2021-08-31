@@ -1,17 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-
-
 <div class="body1 banner-area">
 
   <img class="imglot1" src="static/images/parkinglot1.jpg" alt="">
 </div>
-<h1 class="banner-area1"> You Want To Park Your Car? <br>
+  <h1 class="banner-area1"> You Want To Park Your Car? <br>
+    <button class="parge col s12 btn-large pink darken-4 text-shadow"> <a class="linkme" href="{{ url_for('park') }}">click me</a>
+      </button>
 
-  <button href="{{ url_for('park') }}" class="parge col s12 btn-large pink darken-4 text-shadow">click me</button>
-</h1>
+  </h1>
 
 </div>
 

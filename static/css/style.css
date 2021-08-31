@@ -27,12 +27,17 @@
 .parge {
    text-align: center;
    width:30%;
-   height: 40px;
-   margin-top: auto;
+   height: 50px;
+  
 
 }
 .home-container{
     margin-top: -60px;
+}
+.linkme{
+    color:white;
+    text-align: center;
+    margin-top: 10%;
 }
 
 .left-col{
