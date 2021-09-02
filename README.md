@@ -1,5 +1,6 @@
 
-# VEHICLE PARKING APP
+# MS3PROJECT
+## (VEHICLE PARKING APP)
 
 ## User-Centric Backend Development Milestone Project.
 ![page-view](static/images/1.jpg)
@@ -8,6 +9,8 @@ The Vehicle parking app is dedicated to giving a simple parking system to any or
 
 
 This website/App is presented by Ochuko Erewive. A milestone Project for "Full Stack Developer Course in Code Institude". And it is for educational purposes.
+
+The project is deployed to Heroku on https://ms3-project-parkinglot.herokuapp.com/
 #
 
 ## USER EXPERIENCE (UX)
